@@ -9,7 +9,7 @@ Group:		Development/Building
 # Source0-md5:	d340f3c73d16a1206d0e8c88a66428e7
 Source0:	ftp://ftp.perforce.com/pub/jam/%{name}-%{version}.tar
 URL:		http://www.perforce.com/jam/jam.html
-BuildRequires:	byacc
+BuildRequires:	bison
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,7 +28,8 @@ prostym, a budowanie skomplikowanych rzeczy wykonalnym.
 %{__make} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}" \
-	OPTIM="%{rpmcflags}"
+	OPTIM="%{rpmcflags}" \
+	YACC="bison -y"
 
 %install
 rm -rf $RPM_BUILD_ROOT
