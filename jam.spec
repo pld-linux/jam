@@ -13,9 +13,12 @@ URL:		ftp://ftp.perforce.com/pub/jam
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Jam is a make(1) replacement that makes building simple things
-simple and building complicated things manageable.
+Jam is a make(1) replacement that makes building simple things simple
+and building complicated things manageable.
 
+%description -l pl
+Jam to zamiennik make(1), który czyni budowanie prostych rzeczy
+prostym, a budowanie skomplikowanych rzeczy wykonalnym.
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -26,13 +29,12 @@ simple and building complicated things manageable.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create directories if necessary
-install -d $RPM_BUILD_ROOT/usr/bin
-install jam0 $RPM_BUILD_ROOT/usr/bin
+install -d $RPM_BUILD_ROOT%{_bindir}
+
+install jam0 $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
