@@ -2,7 +2,7 @@ Summary:	Jam - make replacement
 Summary(pl):	Jam - zastêpca make
 Name:		jam
 Version:	2.5
-Release:	1
+Release:	2
 Epoch:		1
 License:	distributable (see README)
 Group:		Development/Building
@@ -40,5 +40,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc RELNOTES README
+%doc RELNOTES README *.html
 %attr(755,root,root) %{_bindir}/*
