@@ -1,0 +1,13 @@
+diff -Naur jam-2.5.orig/Makefile jam-2.5/Makefile
+--- jam-2.5.orig/Makefile	Sat Jun  7 13:47:22 2003
++++ jam-2.5/Makefile	Sat Jun  7 13:50:24 2003
+@@ -1,7 +1,7 @@
+ # Makefile for jam
+ 
+-CC = cc
+-CFLAGS =
++CC = gcc
++CFLAGS = -O2
+ EXENAME = ./jam0
+ TARGET = -o $(EXENAME)
+ 
