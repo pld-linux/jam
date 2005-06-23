@@ -2,7 +2,7 @@ Summary:	Jam - make replacement
 Summary(pl):	Jam - zastêpca make
 Name:		jam
 Version:	2.5
-Release:	3
+Release:	4
 Epoch:		1
 License:	distributable (see README)
 Group:		Development/Building
