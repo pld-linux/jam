@@ -2,7 +2,7 @@ Summary:	Jam - make replacement
 Summary(pl):	Jam - zastêpca make
 Name:		jam
 Version:	2.5
-Release:	4
+Release:	5
 Epoch:		1
 License:	distributable (see README)
 Group:		Development/Building
@@ -10,6 +10,7 @@ Group:		Development/Building
 Source0:	ftp://ftp.perforce.com/pub/jam/%{name}-%{version}.tar
 URL:		http://www.perforce.com/jam/jam.html
 BuildRequires:	bison
+Obsoletes:	boost-jam
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
