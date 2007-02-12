@@ -1,5 +1,5 @@
 Summary:	Jam - make replacement
-Summary(pl):	Jam - zastêpca make
+Summary(pl.UTF-8):   Jam - zastÄ™pca make
 Name:		jam
 Version:	2.5
 Release:	5
@@ -17,8 +17,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Jam is a make(1) replacement that makes building simple things simple
 and building complicated things manageable.
 
-%description -l pl
-Jam to zamiennik make(1), który czyni budowanie prostych rzeczy
+%description -l pl.UTF-8
+Jam to zamiennik make(1), ktÃ³ry czyni budowanie prostych rzeczy
 prostym, a budowanie skomplikowanych rzeczy wykonalnym.
 
 %prep
