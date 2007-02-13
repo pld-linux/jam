@@ -1,5 +1,5 @@
 Summary:	Jam - make replacement
-Summary(pl.UTF-8):   Jam - zastępca make
+Summary(pl.UTF-8):	Jam - zastępca make
 Name:		jam
 Version:	2.5
 Release:	5
