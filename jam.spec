@@ -2,7 +2,7 @@ Summary:	Jam - make replacement
 Summary(pl.UTF-8):	Jam - zastępca make
 Name:		jam
 Version:	2.5
-Release:	6
+Release:	7
 Epoch:		1
 License:	distributable (see README)
 Group:		Development/Building
@@ -22,7 +22,9 @@ Jam to zamiennik make(1), który czyni budowanie prostych rzeczy
 prostym, a budowanie skomplikowanych rzeczy wykonalnym.
 
 %prep
-%setup -q
+%setup -q -T -c
+tar xvf %SOURCE0
+%{__mv} %{name}-%{version}/* .
 
 %build
 # CFLAGS for jam bootstrap, OPTIM for build using jam
