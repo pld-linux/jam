@@ -1,15 +1,17 @@
 Summary:	Jam - make replacement
 Summary(pl.UTF-8):	Jam - zastępca make
 Name:		jam
-Version:	2.5
-Release:	7
+Version:	2.6
+Release:	1
 Epoch:		1
 License:	distributable (see README)
 Group:		Development/Building
-Source0:	ftp://ftp.perforce.com/pub/jam/%{name}-%{version}.tar
-# Source0-md5:	d340f3c73d16a1206d0e8c88a66428e7
-URL:		http://www.perforce.com/jam/jam.html
+#Source0Download: https://swarm.workshop.perforce.com/files/guest/perforce_software/jam
+Source0:	https://swarm.workshop.perforce.com/downloads/guest/perforce_software/jam/%{name}-%{version}.zip
+# Source0-md5:	b0543d4c385b65240993adb9252551a7
+URL:		https://www.perforce.com/documentation/jam-documentation
 BuildRequires:	bison
+BuildRequires:	unzip
 Obsoletes:	boost-jam
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,17 +24,18 @@ Jam to zamiennik make(1), który czyni budowanie prostych rzeczy
 prostym, a budowanie skomplikowanych rzeczy wykonalnym.
 
 %prep
-%setup -q -T -c
-tar xvf %SOURCE0
-%{__mv} %{name}-%{version}/* .
+%setup -q
 
 %build
-# CFLAGS for jam bootstrap, OPTIM for build using jam
-%{__make} \
+# split build into bootstrap and actual build, so that we can pass verbosity option to jam0
+%{__make} jam0 \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}" \
-	OPTIM="%{rpmcflags}" \
-	YACC="bison -y"
+	CFLAGS="%{rpmcflags} %{rpmcppflags}"
+
+CC="%{__cc}" \
+OPTIM="%{rpmcflags}" \
+YACC="bison -y" \
+./jam0 -d x
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -46,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc RELNOTES README *.html
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/jam
