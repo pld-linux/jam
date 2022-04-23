@@ -1,14 +1,14 @@
 Summary:	Jam - make replacement
 Summary(pl.UTF-8):	Jam - zastępca make
 Name:		jam
-Version:	2.6
+Version:	2.6.1
 Release:	1
 Epoch:		1
 License:	distributable (see README)
 Group:		Development/Building
 #Source0Download: https://swarm.workshop.perforce.com/files/guest/perforce_software/jam
 Source0:	https://swarm.workshop.perforce.com/downloads/guest/perforce_software/jam/%{name}-%{version}.zip
-# Source0-md5:	b0543d4c385b65240993adb9252551a7
+# Source0-md5:	6df59f91da8d3c8ab12de22f3b8c1258
 URL:		https://www.perforce.com/documentation/jam-documentation
 BuildRequires:	bison
 BuildRequires:	unzip
